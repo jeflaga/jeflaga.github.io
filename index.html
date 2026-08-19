@@ -1,7 +1,422 @@
-<!DOCTYPE html>
-<html>
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-11-02 Sun 20:48 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Jef Laga</title>
+<meta name="author" content="Jef Laga" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<link rel="stylesheet" type="text/css" href="org-css.css"/>
+<link rel="shortcut icon" type="image/x-icon" href="images/umass-favicon.ico">
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+<div id="content" class="content">
+<h1 class="title">Jef Laga
+<br />
+<span class="subtitle">Academic Website</span>
+</h1>
+
+<div id="org2fc0225" class="figure">
+<p><img src="photograph.png" align="right" width="270px" />
+</p>
+</div>
+
+
+I am a mathematician interested in algebraic and arithmetic geometry.
+Currently, I am a Research Fellow at <a href="https://www.joh.cam.ac.uk/">St John's College</a> and a member of the number theory group at <a href="https://www.dpmms.cam.ac.uk/">DPMMS</a>, University of Cambridge.
+
+
+<p>My research focuses on the arithmetic and geometry of curves and abelian varieties. Here is my CV (updated March 2026): <a href="https://www.dpmms.cam.ac.uk/~jcsl5/academiccv.pdf">[pdf]</a>
+
+<p>If you're a mathematician reading this, consider signing the <a href="https://leidendeclaration.ai/">Leiden Declaration on AI and Mathematics</a>.
+
+
+
+
+<div id="outline-container-orgf6e610c" class="outline-2">
+<h2 id="orgf6e610c">Coordinates</h2>
+<div class="outline-text-2" id="text-orgf6e610c">
+<ul class="org-ul">
+<li>Office: EL.06 in the CMS and Cripps F11c in St John's College.</li>
+<li>Email: <code>jcsl5(at)cam(dot)ac(dot)uk</code></li>
+<li>Here are my <a
+  href="https://arxiv.org/a/laga_j_1.html"
+  class="arxiv">arXiv papers</a> and  <a
+  href="https://mathscinet.ams.org/mathscinet/author?authorId=1521677"
+  class="mr">MathSciNet profile</a>.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org4c17279" class="outline-2">
+<h2 id="org4c17279">Research articles</h2>
+<div class="outline-text-2" id="text-org4c17279">
+In reverse chronological order of arXiv submission. Note that preprints might not always include changes made before publication. 
+
+<ol type="1", start="13", reversed>
+
+<p> <li><b>Polarizations, torsors and theta groups. </b>
+<br> Preprint. (<a href="https://arxiv.org/abs/2510.24678"
+            class="arxiv">2510.24678</a>)
+
+<p> <li><b>Families of curves in Vinberg representations. </b>
+<br> Preprint, joint with Beth Romano. (<a href="https://www.arxiv.org/abs/2508.09607"
+            class="arxiv">2508.09607</a>, <a href="https://github.com/jeflaga/slodowy-slices-vinberg-reps" class="code">code</a>)
+
+<p> <li><b>Kummers, spinors and heights. </b>
+<br> Preprint, joint with Jack Thorne. (<a href="https://arxiv.org/abs/2507.06865" class="arxiv">2507.06865</a>, <a href="https://zenodo.org/records/16903894" class="code">code</a>)
+
+<p> <li><b> Lower bounds on heights of odd degree points on hyperelliptic curves. </b>
+<br> Preprint, joint with Jack Thorne. (<a href="https://arxiv.org/abs/2507.08652"class="arxiv">2507.08652</a>)
+
+<p> <li><b> Vanishing criteria for Ceresa cycles. </b>
+<br> <a href="https://www.cambridge.org/core/journals/compositio-mathematica"
+        class="journal">Compositio Mathematica</a> (to appear). With Ari Shnidman. (<a href="https://arxiv.org/abs/2406.03891"class="arxiv">2406.03891</a>)
+<br> (<a href="https://www.dpmms.cam.ac.uk/~jcsl5/slides/ceresa-barcelona.pdf">[slides]</a> and <a href="https://icerm.brown.edu/video_archive/3584">[video]</a> by me, and <a href="https://math.univ-cotedazur.fr/~beauvill/conf/Mohali.pdf">[slides]</a> of a survey talk by A. Beauville)
+
+<p> <li><b>100% of odd hyperelliptic Jacobians have no rational points of small height. </b>
+<br> Preprint, joint with Jack Thorne. (<a href="https://arxiv.org/abs/2405.10224"class="arxiv">2405.10224</a>)
+<br> (<a href="https://www.dpmms.cam.ac.uk/~jcsl5/slides/Schney_July2025.pdf">[slides]</a>)
+
+<p> <li><b>A positive proportion of monic odd-degree hyperelliptic curves of genus g≥4 have no unexpected quadratic points. </b> 
+<br> <a href="https://doi.org/10.1093/imrn/rnae184"
+        class="journal">IMRN</a>. With Ashvin Swaminathan. (<a href="https://arxiv.org/abs/2405.09421"class="arxiv">2405.09421</a>)
+
+
+<p> <li><b>Ceresa cycles of bielliptic Picard curves. </b>
+<br><a href="https://doi.org/10.1515/crelle-2024-0102"
+        class="journal">J. Reine Angew. Math. (Crelle)</a>. Joint with Ari Shnidman. (<a href="https://arxiv.org/abs/2312.12965" class="arxiv">2312.12965</a>)
+<br> (<a href="https://icerm.brown.edu/video_archive/3572">[video]</a> by Ari)
+
+<p> <li><b>Rational torsion points on abelian surfaces with quaternionic multiplication. </b>
+<br> <a href="https://doi.org/10.1017/fms.2024.105"
+        class="journal">Forum Math Sigma</a>. With Ciaran Schembri, Ari Shnidman and John Voight.  (<a href="https://arxiv.org/abs/2308.15193"class="arxiv">2308.15193</a>)
+
+<p> <li><b>The geometry and arithmetic of bielliptic Picard curves. </b>
+<br> <a href="https://www.lms.ac.uk/publications/jlms"
+        class="journal">Journal of the London Mathematical Society</a> (to appear). With Ari Shnidman. (<a href="https://arxiv.org/abs/2308.15297"class="arxiv">2308.15297</a>)
+
+<p> <li><b>Graded Lie algebras, compactified Jacobians and arithmetic statistics. </b>
+<br> <a href="https://doi.org/10.4171/jems/1526"
+        class="journal">Journal of the European Mathematical Society</a>. (<a href="https://arxiv.org/abs/2204.02048"class="arxiv">2204.02048</a>)
+<br> (<a href="https://youtu.be/922XDmbe604">[video]</a> and <a href="https://www.dpmms.cam.ac.uk/~jcsl5/slides/PU_IAS_NT_Seminar.pdf">[slides]</a> from a talk about this work.)
+
+<p> <li><b>Arithmetic statistics of Prym surfaces. </b>
+<br> <a href="https://link.springer.com/article/10.1007/s00208-022-02398-5"
+        class="journal">Mathematische Annalen</a>. (<a href="https://arxiv.org/abs/2101.07658"class="arxiv">2101.07658</a>)
+
+
+<p> <li><b>The average size of the 2-Selmer group of a family of non-hyperelliptic curves of genus 3. </b>
+<br> <a href="https://doi.org/10.2140/ant.2022.16.1161"
+        class="journal">Algebra & Number Theory</a>. (<a href="https://arxiv.org/abs/2008.13158"class="arxiv">2008.13158</a>)
+</ol>
+</div>
+
+Here is a grouping of my papers by research theme:
+
+<div class="outline-text-2" id="text-orgf6e610c">
+<ul class="org-ul">
+
+<li> Arithmetic of hyperelliptic curves: 7, 8, 10, 11 </li>
+
+<li> Abelian varieties: 4, 5, 13 </li>
+
+<li> Algebraic cycles: 6, 9 </li> 
+
+<li> Arithmetic statistics via graded Lie algebras: 1, 2, 3, 12 </li>
+
+</ul>
+</div>
+
+
+</div>
+
+
+<h2>Teaching </h2>
+
+<div class="outline-text-2" id="text-orgf6e610c">
+<ul class="org-ul">
+
+<li> Current: IB Linear Algebra supervisions </li>
+
+<li> Michaelmas 2024: Part III Lie algebras. Here are the lecture notes: <a href="https://www.dpmms.cam.ac.uk/~jcsl5/notes/partiii-liealgebras.pdf">[pdf]</a> </li>
+
+<li> Spring 2023: MAT449 Representation theory. Here are the lecture notes: <a href="https://www.dpmms.cam.ac.uk/~jcsl5/notes/repthynotes.pdf">[pdf]</a> </li>
+
+<li> Fall 2022: <a href="https://registrar.princeton.edu/course-offerings/course-details?term=1232&courseid=004140">MAT104</a> Calculus II </li>
+
+</ul>
+</div>
+
+
+<h2>Outreach </h2>
+
+In the past, I have given talks to high-school students, undergraduates from non-math backgrounds, olympiad contestants and summer school students on various aspects of number theory, geometry and pure mathematics.
+I am generally happy to give more such talks, especially those focused on outreach and access; please send me an email if you're interested. 
+
+<h2>Reading groups</h2>
+<div class="outline-text-2" id="text-orgf6e610c">
+<ul class="org-ul">
+<li>Easter 2026 (Quantitative Uniform Mordell): <a href="mordell/mordell.html">[schedule]</a>     </li>
+<li>Fall 2022: Princeton Arithmetic Statistics learning seminar
+<li>Michaelmas 2021 (Arakelov intersection theory on Shimura Varieties): <a href="arakelovshimura/arakelovshimura.html">[schedule]</a>     </li>
+<li>Lent-Easter 2021 (Automorphy lifting theorems): <a href="automorphylifting/automorphylifting.html">[schedule]</a>     </li>
+<li>Michaelmas 2020 (Mazur's torsion paper): <a href="mazur/mazur.html">[schedule]</a>     </li>
+<li>Lent-Easter 2020 (Weil II): following chapter I of <a href="https://link.springer.com/book/10.1007/978-3-662-04576-3">this book</a>     </li>
+<li>Michaelmas 2019 (Average ranks of elliptic curves): following <a href="https://arxiv.org/abs/1006.1002">this paper</a>    </li>
+</ul>
+</div>
+
+
+<h2>Other notes</h2>
+
+<div class="outline-text-2" id="text-orgf6e610c">
+<ul class="org-ul">
+
+<li>A note surveying some ADE classifications and connections between them, accompanying my talks (<a href="https://huji.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=ff3cae18-dbb7-4335-b842-ae880085c59f">[video1]</a> and <a href="https://huji.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=8184aa8e-90b6-4727-b626-ae5100698a40">[video2]</a>) in Kazhdan's basic notions seminar: <a href="https://www.dpmms.cam.ac.uk/~jcsl5/notes/ADEclassifications.pdf">[pdf]</a> (The second talk goes further than the note.)   </li>
+
+
+<li>A note defining the analytification functor in the rigid setting, together with the example of the Tate curve: <a href="https://www.dpmms.cam.ac.uk/~jcsl5/notes/AnalytificationUniformization.pdf">[pdf]</a>   </li>
+
+<li>Notes for a talk defining the etale homotopy type of a scheme with some examples: <a href="https://www.dpmms.cam.ac.uk/~jcsl5/notes/EtaleHomotopyType.pdf">[pdf]</a>
+ </li>
+
+<li>Statement of the Bloch-Kato conjecture on special values of L-functions: <a href="https://www.dpmms.cam.ac.uk/~jcsl5/notes/BK-studygroup.pdf">[pdf]</a>
+  </li>
+
+<li>My Part III essay on Modular forms of weight one: <a href="https://www.dpmms.cam.ac.uk/~jcsl5/partIIIessay.pdf">[pdf]</a> </li>
+
+<li>A simple plane curve over the p-adics with bad reduction but whose Jacobian has good reduction: <a href="https://www.codecogs.com/eqnedit.php?latex=y^4&plus;y^2=x^3&plus;p^6&space;\quad&space;(p&space;\neq&space;2,3)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?y^4&plus;y^2=x^3&plus;p^6&space;\quad&space;(p&space;\neq&space;2,3)" title="y^4+y^2=x^3+p^6 \quad (p \neq 2,3)" /></a>
+  </li>
+
+</ul>
+</div>
+
+<h2>Miscellaneous</h2>
+
+<div class="outline-text-2" id="text-orgf6e610c">
+<ul class="org-ul">
+
+<li>Check out the Youtube channel <a href="https://www.youtube.com/channel/UCYRR0SgbYH59htIHkwTbqMw" target="_blank" title="https://www.youtube.com/channel/UCYRR0SgbYH59htIHkwTbqMw">Math-life balance</a>, where Mura Yakerson interviews mathematicians in an interesting and personal way </li>
+
+
+<li>Bjorn Poonen has great advice on mathematical <a href="http://www-math.mit.edu/~poonen/papers/writing.pdf">writing</a>, <a href="http://www-math.mit.edu/~poonen/papers/speaking.pdf">speaking</a> and <a href="https://math.mit.edu/~poonen/advice.html">being a PhD student</a> </li>
+
+<li>I strongly support Frederico Ardila's <a href="https://fardila.com/">axioms</a> </li>
+
+<li>Check out <a href="https://ilaba.wordpress.com/2013/02/09/gender-bias-101-for-mathematicians/">Gender bias 101 for mathematicians</a>
+
+</ul>
+</div>
+
+<h2>Acknowledgement</h2>
+
+Thanks to <a href="https://sarangop1728.github.io">Santiago Arango-Piñeros</a> for letting me borrow his website design.
+
+<!-- Default Statcounter code for Jef Laga's homepage
+https://www.dpmms.cam.ac.uk/~jcsl5/ -->
+<script type="text/javascript">
+var sc_project=12425337; 
+var sc_invisible=1; 
+var sc_security="333f11bb"; 
+var sc_https=1; 
+</script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js" async></script>
+<noscript><div class="statcounter"><a title="Web Analytics Made Easy -
+StatCounter" href="https://statcounter.com/" target="_blank"><img
+class="statcounter" src="https://c.statcounter.com/12425337/0/333f11bb/1/"
+alt="Web Analytics Made Easy - StatCounter"></a></div></noscript>
+<!-- End of Statcounter Code -->
+
+
+
 </body>
 </html>
