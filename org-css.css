@@ -1,0 +1,171 @@
+/* === Simplified Orgmode CSS (responsive version with collapsible TOC and specialized link colors) === */
+
+:root {
+  --body-color: #34495e;
+  --heading-color: #054680;
+  --link-color: #269dc7;
+  --background: #f8f9f9;
+}
+
+/* === Base styles === */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--body-color);
+  background-color: white;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* === Main content container === */
+#content {
+  background: var(--background);
+  border-radius: 12px;
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  box-sizing: border-box;
+  border:solid;
+}
+
+/* === Titles === */
+.title {
+  font-size: clamp(1.5rem, 5vw, 3rem);
+  line-height: 1.2;
+  margin-top: 0;
+  color: var(--heading-color);
+}
+
+/* === Headings === */
+h1, h2, h3, h4 {
+  color: var(--heading-color);
+  margin-top: 1.5em;
+}
+h2 {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.3em;
+}
+
+/* === Links === */
+a { color: var(--link-color); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Specialized link colors */
+a.journal { color: #C47D30; }
+a.journal:hover { color: var(--body-color); }
+a.code { color: #20B2AA; }
+a.code:hover { color: var(--body-color); }
+a.mr { color: #000080; }
+a.mr:hover { color: var(--body-color); }
+a.arxiv { color: #DC143C; }
+a.arxiv:hover { color: var(--body-color); }
+
+/* === Tables === */
+table { width: 100%; border-collapse: collapse; margin: 1em 0; border:solid;}
+th, td { border: 1px solid #ccc; padding: 0.5em; text-align: left; }
+th { background-color: var(--heading-color); color: white; }
+
+/* === Code blocks === */
+pre, code { font-family: Menlo, monospace; background: #f2f2f2; border-radius: 6px; }
+pre { padding: 1em; overflow-x: auto; }
+
+/* === Images === */
+img { max-width: 100%; height: auto; border-radius: 8px; border: 1px solid #ddd; }
+
+/* === Reference grid for papers === */
+.ref-container {
+  display: grid;
+  grid-template-columns: 6fr 1fr;
+  gap: 1rem;
+  align-items: start;
+  margin: 1.5rem 0;
+}
+.paper-image img {
+  max-width: 160px;
+  width: 100%;
+  height: auto;
+  border: 2px solid var(--body-color);
+  border-radius: 8px;
+  display: block;
+}
+
+/* === Hover-revealed Table of Contents === */
+#table-of-contents {
+  position: sticky;
+  top: 1rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  padding: 0.5rem 1rem;
+  margin-bottom: 2rem;
+  /* max-width: 260px; */
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+/* Keep only the title visible initially */
+#table-of-contents h2 {
+  margin: 0;
+  text-align: center;
+  border-bottom: none;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--heading-color);
+  cursor: pointer;
+}
+
+/* Hide the actual list by default */
+#text-table-of-contents {
+  max-height: 0;
+  overflow: scroll;
+  opacity: 0;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+/* Reveal the list on hover */
+#table-of-contents:hover #text-table-of-contents {
+  max-height: 500px;   /* enough to show all items */
+  opacity: 1;
+}
+
+/* Make the container grow slightly on hover */
+#table-of-contents:hover {
+  box-shadow: 0 0 15px rgba(0,0,0,0.15);
+  padding-bottom: 1rem;
+}
+
+/* Optional: add an arrow indicator to the heading */
+#table-of-contents h2::after {
+  /* content: "▾"; */
+  font-size: 0.9rem;
+  margin-left: 0.4em;
+  color: var(--link-color);
+  transition: transform 0.2s;
+}
+#table-of-contents:hover h2::after {
+  transform: rotate(180deg);
+}
+
+/* === Responsive adjustments === */
+@media (max-width: 900px) {
+  #table-of-contents {
+    position: static;
+    max-width: none;
+    margin: 1rem 0;
+  }
+}
+
+
+/* === Footer === */
+#postamble {
+  font-size: 0.8rem;
+  text-align: center;
+  color: #777;
+  margin: 2rem 0;
+}
+
+/* Accessibility: focus outline for keyboard users */
+details#table-of-contents summary:focus,
+.toc-header:focus { outline: 3px solid rgba(26,117,149,0.15); outline-offset: 3px; }
+
