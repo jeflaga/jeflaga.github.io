@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Arithmetic Statistics and Rational Points: a one-day mathematics workshop at University College London on Thursday 15 April 2027.">
+  <meta name="author" content="Jef Laga">
+  <title>Arithmetic Statistics and Rational Points — UCL, 15 April 2027</title>
+  <style>
+    /* Adapted to match the colours, typography and layout of jeflaga.com.
+       All styling is embedded: this HTML file can be hosted on its own. */
+    :root {
+      --body-color: #34495e;
+      --heading-color: #054680;
+      --link-color: #269dc7;
+      --background: #f8f9f9;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: var(--body-color);
+      background-color: white;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      font-size: 1rem;
+    }
+    #content {
+      background: var(--background);
+      border: 3px solid var(--body-color);
+      border-radius: 12px;
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 2rem;
+    }
+    .title {
+      font-size: clamp(1.65rem, 5vw, 3rem);
+      line-height: 1.2;
+      text-align: center;
+      color: var(--heading-color);
+      margin: 0 0 .2em;
+      text-wrap: balance;
+    }
+    .subtitle {
+      display: block;
+      margin-top: .55em;
+      font-size: 1rem;
+      font-weight: bold;
+      line-height: 1.5;
+      text-align: center;
+      color: var(--body-color);
+    }
+    .event-date {
+      text-align: center;
+      font-size: 1.15rem;
+      margin: 1.25rem 0 0.15rem;
+    }
+    .event-location { text-align: center; margin: 0 0 1.7rem; }
+    h1, h2, h3, h4 { color: var(--heading-color); margin-top: 1.5em; }
+    h2 { border-bottom: 1px solid #ddd; padding-bottom: .3em; }
+    h3 { margin-bottom: .25em; }
+    a { color: var(--link-color); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    a:focus-visible { outline: 3px solid var(--link-color); outline-offset: 3px; }
+    .page-nav { text-align: center; font-size: .95rem; margin: 1.3rem 0; }
+    .page-nav a { margin: 0 .45rem; white-space: nowrap; }
+    .status-note { font-size: .93rem; color: #536578; }
+    .table-scroll { width: 100%; overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; margin: 1em 0; border: 2px solid var(--body-color); }
+    th, td { border: 1px solid #ccc; padding: .6em .7em; text-align: left; vertical-align: top; }
+    th { background-color: var(--heading-color); color: white; }
+    td.time { width: 150px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+    td.speaker { width: 190px; }
+    .break-row td { background: #eef2f4; color: #536578; font-size: .95rem; }
+    .speaker-name { font-weight: 600; }
+    .talk-title { font-style: italic; }
+    .detail-list { padding-left: 1.5rem; }
+    .detail-list li { margin: .35rem 0; }
+    .footer {
+      margin-top: 2.3rem;
+      padding-top: .7rem;
+      border-top: 1px solid #ddd;
+      font-size: .85rem;
+      text-align: center;
+      color: #777;
+    }
+    @media (max-width: 940px) {
+      #content { margin: 1rem; padding: 1.4rem; }
+    }
+    @media (max-width: 520px) {
+      #content { padding: 1rem; border-width: 2px; }
+      .page-nav a { display: inline-block; margin: .2rem .4rem; }
+      th, td { padding: .5em; }
+      table { min-width: 620px; }
+    }
+    @media print {
+      body { color: black; }
+      #content { margin: 0 auto; border: none; max-width: none; background: white; }
+      .page-nav { display: none; }
+      table { break-inside: avoid; }
+      a { color: inherit; text-decoration: underline; }
+    }
+  </style>
+</head>
+<body>
+  <main id="content">
+    <header>
+      <h1 class="title">Arithmetic Statistics and Rational Points
+        <span class="subtitle">One-day workshop at University College London</span>
+      </h1>
+      <p class="event-date"><strong><time datetime="2027-04-15">Thursday, 15 April 2027</time></strong></p>
+      <p class="event-location">Department of Mathematics, <a href="https://www.ucl.ac.uk/">University College London</a></p>
+      <nav class="page-nav" aria-label="Page sections">
+        <a href="#about">About</a> ·
+        <a href="#programme">Programme</a> ·
+        <a href="#information">Practical information</a>
+      </nav>
+    </header>
+
+    <section id="about" aria-labelledby="about-heading">
+      <h2 id="about-heading">About the workshop</h2>
+      <p>
+        A one-day conference in arithmetic statistics and rational points supported by an LMS Celebrating New Appointments grant and by the UCL Mathematics Department.
+      </p>
+    </section>
+
+    <section id="programme" aria-labelledby="programme-heading">
+      <h2 id="programme-heading">Draft programme</h2>
+      <p class="status-note">
+        <strong>Provisional programme.</strong> 
+      </p>
+      <div class="table-scroll" role="region" aria-label="Workshop timetable" tabindex="0">
+        <table>
+          <thead>
+            <tr><th scope="col">Time</th><th scope="col">Speaker</th><th scope="col">Talk</th></tr>
+          </thead>
+          <tbody>
+            <tr class="break-row"><td class="time">09:30–10:00</td><td colspan="2">Arrival and coffee</td></tr>
+            <tr>
+              <td class="time">10:00–11:00</td>
+              <td class="speaker"><span class="speaker-name">TBA</span> <span class="status-note">(sample)</span></td>
+              <td><span class="talk-title">TBA</span></td>
+            </tr>
+            <tr class="break-row"><td class="time">11:00–11:30</td><td colspan="2">Coffee break</td></tr>
+            <tr>
+              <td class="time">11:30–12:30</td>
+              <td class="speaker"><span class="speaker-name">TBA</span> <span class="status-note">(sample)</span></td>
+              <td><span class="talk-title">TBA</span></td>
+            </tr>
+            <tr class="break-row"><td class="time">12:30–14:00</td><td colspan="2">Lunch</td></tr>
+            <tr>
+              <td class="time">14:00–15:00</td>
+              <td class="speaker"><span class="speaker-name">TBA</span> <span class="status-note">(sample)</span></td>
+              <td><span class="talk-title">TBA</span></td>
+            </tr>
+            <tr class="break-row"><td class="time">15:00–15:30</td><td colspan="2">Coffee break</td></tr>
+            <tr>
+              <td class="time">15:30–16:30</td>
+              <td class="speaker"><span class="speaker-name">TBA</span> <span class="status-note">(sample)</span></td>
+              <td><span class="talk-title">TBA</span></td>
+            </tr>
+            <tr class="break-row"><td class="time">From 16:30</td><td colspan="2">Closing of workshop, pub</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="information" aria-labelledby="info-heading">
+      <h2 id="info-heading">Practical information</h2>
+      <ul class="detail-list">
+        <li><strong>Date:</strong> Thursday, 15 April 2027.</li>
+        <li><strong>Location:</strong> Room 505, Department of Mathematics, University College London.</li>
+        <li><strong>Registration:</strong> Details will be provided in due course.</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Organiser</h2>
+      <p>Jef Laga (University College London). For further questions, contact me at jeflaga(at)hotmail(dot)com.</p>
+    </section>
+
+  </main>
+</body>
+</html>
